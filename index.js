@@ -32,7 +32,4 @@ app.use('/admin',adminroute)
 import alunoroute from './routes/alunoroute.js'
 app.use('/aluno',alunoroute)
 
-
-
-
 app.listen(port);
