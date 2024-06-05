@@ -13,7 +13,7 @@ export function realiza_login(req,res){
 }
 
 export function abre_tela_cadastro(req,res){
-    res.render('cadastro/cadastro.ejs')
+    res.render('login/cadastro.ejs')
 }
 
 export async function realiza_cadastro(req,res){
