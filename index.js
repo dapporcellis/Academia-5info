@@ -23,13 +23,16 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+import autenticacaoadmin from './config/autenticacaoadmin.js';
+import autenticacaoaluno from './config/autenticacaoaluno.js';
+
 import route from './routes/route.js'
 app.use('/',route)
 
 import adminroute from './routes/adminroute.js'
-app.use('/admin',adminroute)
+app.use('/admin',autenticacaoadmin,adminroute)
 
 import alunoroute from './routes/alunoroute.js'
-app.use('/aluno',alunoroute)
+app.use('/aluno',autenticacaoaluno, alunoroute)
 
 app.listen(port);

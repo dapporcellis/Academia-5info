@@ -32,3 +32,7 @@ export async function realiza_cadastro(req,res){
     res.redirect('/')
 
 }
+
+export function abre_tela_inicial(req,res){
+    res.render('login/inicial.ejs')
+}
