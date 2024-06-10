@@ -12,7 +12,7 @@ import {
 
 import multer from 'multer';
 const foto = multer({
-    dest: './public'
+    dest: './public/fotos'
 })
 
 router.get('/', abre_tela_login)
