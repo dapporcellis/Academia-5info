@@ -10,7 +10,7 @@ passport.use(new LocalStrategy({
     let usuario = await Usuario.findOne({
         'email': username
     })    
-    
+    console.log(usuario)
     if (!usuario) {        
         return cb(null, false, 'Email não encontrado.')
     } else if (usuario.senha != password) {
