@@ -5,7 +5,6 @@ import passport from '../config/passport.js';
 
 import {
     abre_tela_login,
-    realiza_login,
     abre_tela_cadastro,
     realiza_cadastro
 } from '../controllers/controllers.js';
@@ -16,7 +15,10 @@ const foto = multer({
 })
 
 router.get('/', abre_tela_login)
-router.post('/', realiza_login)
+router.post('/', passport.authenticate('local', {
+        successRedirect: '/usuario',
+        failureRedirect: '/'
+    }))
 
 router.get('/cadastro', abre_tela_cadastro)
 router.post('/cadastro', foto.single('foto'), realiza_cadastro)

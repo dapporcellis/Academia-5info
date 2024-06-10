@@ -1,16 +1,16 @@
 import Usuario from '../models/Usuario.js'
-import passport from '../config/passport.js';
+//import passport from '../config/passport.js';
 
 export function abre_tela_login(req,res){
     res.render('login/login.ejs')
 }
 
-export function realiza_login(req,res){
+/*export function realiza_login(req,res){
     passport.authenticate('local', {
         successRedirect: '/usuario',
         failureRedirect: '/'
     })
-}
+}*/
 
 export function abre_tela_cadastro(req,res){
     res.render('login/cadastro.ejs')

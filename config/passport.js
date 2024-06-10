@@ -10,14 +10,13 @@ passport.use(new LocalStrategy({
     let usuario = await Usuario.findOne({
         'email': username
     })    
-    console.log(usuario)
+    
     if (!usuario) {        
         return cb(null, false, 'Email não encontrado.')
     } else if (usuario.senha != password) {
         console.log('Erro de senha')
         return cb(null, false, 'Senha incorreta.')
     } else {
-        console.log('Passou')
         return cb(null, usuario);
     }
 
