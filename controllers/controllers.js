@@ -17,17 +17,18 @@ export function abre_tela_cadastro(req,res){
 }
 
 export async function realiza_cadastro(req,res){
+    console.log("O admin apareceu assim: "+req.body.admin)
     const usuario = new Usuario({
         nome: req.body.nome,
         email: req.body.email,
         senha: req.body.senha,
         foto: req.file.filename,
-        admin: req.body.admin,
+        admin: req.body.admin=="admin"?true:false,
     })
 
     console.log(usuario)
 
     await usuario.save()
-    res.render('usuario')
+    res.redirect('/')
 
 }
