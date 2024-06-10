@@ -22,7 +22,7 @@ export async function realiza_cadastro(req,res){
         email: req.body.email,
         senha: req.body.senha,
         foto: req.file.filename,
-        admin: true
+        admin: req.body.admin,
     })
 
     console.log(usuario)
