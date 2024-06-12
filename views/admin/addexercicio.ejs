@@ -1,0 +1,20 @@
+<%-include('cabecalho.ejs') %>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+        <input type="text" class='form-control' name="exercicio" id="exercicio" placeholder="Digite o nome do Exercício.">
+        <label class="form-label" for="exercicio">Exercicio:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="equipamentos" placeholder="Digite separado por vírgula os números dos equipamentos." id="equipamentos">
+        <label for="equipamentos">Equipamentos:</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="file" class='form-control' name="foto" id="foto">
+        <label class="form-label" for="foto">Foto:</label>
+    </div>    
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary mb-3" value="Enviar">
+        <input type="reset" class="btn btn-secundary mb-3" value="Limpar">
+    </div>
+</form>
+<%-include('rodape.ejs') %>

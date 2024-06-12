@@ -1,0 +1,30 @@
+<%-include('cabecalho.ejs')%>
+<div class="my-3 justify-content-end" id="navbarSupportedContent">
+    <form class="d-flex" method="post" role="search">
+        <input class="form-control me-2" name="pesquisar" type="search" placeholder="Buscar"
+            aria-label="Search">
+        <button class="btn btn-secundary bg-danger bg-gradient p-2 " type="submit">Buscar</button>
+    </form>                            
+</div>
+<table class="table table-hover rounded">
+    <tr>
+        <th>Exercicio</th>
+        <th>Equipamentos</th>
+        <th>Foto</th>
+        <th>Deletar</th>
+    </tr>
+    <% Exercicios.forEach(function(exercicio){ %>
+    <tr>
+        <td><%=exercicio.exercicio%></td>
+        <td><%=exercicio.equipamentos%></td>
+        <td>
+            <img class="img-thumbnail img-fluid" src="/fotos/admin/<%=exercicio.foto%>" width="200" alt="Foto do exercicio">
+        </td>
+        <td>
+            <a href="/admin/delexercicio/<%=exercicio._id%>">Deletar</a>
+        </td>
+    </tr>
+    <%})%>
+</table>
+
+<%-include('rodape.ejs')%>
